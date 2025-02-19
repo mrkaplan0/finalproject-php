@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #B9B28A ;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+  }
+  .add-kind {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 50px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 1s ease-in-out;
+  }
+
+  /*form style */
+  .kind-form {
+    width: 90%;
+  display: flex;
+    flex-direction: column;
+   
+  }
+  .kind-form input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  .kind-form i {color: #f4f4f4f4;
+      font-size: 20px;
+      margin-right: 10px;
+  }
+  .kind-form button {
+    width: 80%;
+    padding: 10px;
+    margin: 30px 0;
+    border: none;
+    background-color: #f4f4f4f4;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .kind-form button:hover {
+    background-color: rgba(95, 25, 234, 0.957);
+    color: #f4f4f4f4;
+  }
+  
+  .kind-form a {
+    text-decoration: none;
+    color: #33333383;
+    
+  }
+  .kind-form a:hover {
+    color: rgba(95, 25, 234, 0.957);
+  }
+
+  
+  .geschlecht {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0 0 50px;
+  }
+  .geschlecht label{
+    color: gray;
+  }
+  
