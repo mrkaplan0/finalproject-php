@@ -1,3 +1,22 @@
+<?php
+include 'db.php';   
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+header("Location: management.php");
+exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +38,7 @@
 
             <div class="login-form">
                 <h1>Register</h1>
-                <form action="management.php" method="post">
+                <form action="register.php" method="post">
 
                 <div class="input-box">
                         <i class="fa-solid fa-user"></i>

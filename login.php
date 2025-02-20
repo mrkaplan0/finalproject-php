@@ -1,3 +1,35 @@
+<?php
+include 'db.php';   
+if (isset($_POST['submit'])) {
+   
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    
+    $userQuery = "SELECT * FROM user WHERE email = '$email'";
+    $result = mysqli_query($conn, $userQuery);
+    $row = mysqli_num_rows($result);
+    if ($row > 0) {
+        $user = mysqli_fetch_assoc($result);
+        if (password_verify($password, $user['password'])) {
+            session_start();
+            $_SESSION['email'] = $email;
+            $_SESSION['username'] = $username;
+header("Location: management.php");
+            exit();
+        } else {
+            echo "Password is incorrect";
+        }
+    }
+    if ($result) {
+header("Location: management.php");
+exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+mysqli_close($conn);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +51,7 @@
 
             <div class="login-form">
                 <h1>Anmelden</h1>
-                <form action="home.php" method="post">
+                <form action="login.php" method="post">
                     <div class="input-box">
                         <i class="fa-solid fa-envelope"></i>
                         <input type="email" name="email" placeholder="E-Mail" required>
