@@ -1,30 +1,26 @@
 <?php
-include 'db.php';   
+include 'db.php';
 if (isset($_POST['submit'])) {
-   
+    $username = "";
     $email = $_POST['email'];
     $password = $_POST['password'];
-    
+
     $userQuery = "SELECT * FROM user WHERE email = '$email'";
     $result = mysqli_query($conn, $userQuery);
     $row = mysqli_num_rows($result);
+    echo $row;
     if ($row > 0) {
         $user = mysqli_fetch_assoc($result);
         if (password_verify($password, $user['password'])) {
             session_start();
-            $_SESSION['email'] = $email;
-            $_SESSION['username'] = $username;
-header("Location: management.php");
-            exit();
+            $_SESSION['email'] = $user ['email'];
+            $_SESSION['username'] = $user ['username'];
+            header("Location: management.php");
         } else {
-            echo "Password is incorrect";
+            echo "Password is incorrect.";
         }
-    }
-    if ($result) {
-header("Location: management.php");
-exit();
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "User not found.";
     }
 }
 mysqli_close($conn);
@@ -62,10 +58,10 @@ mysqli_close($conn);
                     </div>
                     <input type="submit" name="submit" value="Login"></input>
                 </form>
-                
+
             </div>
-           <a href="register.php"> Haben Sie noch kein Konto?</a>
-        </div> 
+            <a href="register.php"> Haben Sie noch kein Konto?</a>
+        </div>
     </main>
 
 </body>

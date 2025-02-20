@@ -1,3 +1,21 @@
+<?php
+include 'db.php';
+$isSuccess = false;
+if(isset($_POST['submit'])){
+    $vorname = $_POST['vorname'];
+    $nachname = $_POST['nachname'];
+    $geburtsdatum = $_POST['geburtsdatum'];
+    $geschlecht = $_POST['geschlecht'];
+    $adresse = $_POST['adresse'];
+    $sql = "INSERT INTO kind (vorname, nachname, geburtsdatum, geschlecht, adresse) VALUES ('$vorname', '$nachname', '$geburtsdatum', '$geschlecht', '$adresse')";
+    if ($conn->query($sql) === TRUE) {
+        $isSuccess = true;
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    $conn->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +35,7 @@
 
             <div class="kind-form">
                
-                <form action="management.php" method="post">
+                <form action="add-kind.php" method="post">
                   
                        
                         <input type="text" name="vorname" placeholder="Vorname" required>
@@ -31,10 +49,7 @@
                         
                        </div>
                         <input type="text" name="adresse" placeholder="Adresse" >
-                        <input type="tel" name="tel" placeholder="Telefonnummer" >
-                        <input type="email" name="email" placeholder="Email" >
-        
-                        
+          
                     
                     <input type="submit" name="submit" value="Speichern"></input>
                 </form>
@@ -42,6 +57,12 @@
             </div>
           
         </div> 
+
+        <?php if($isSuccess){} 
+          echo  "<div class='success'>";      
+                 echo   "<p>🎉🎉🎉  Kind wurde erfolgreich hinzugefügt.  🎉🎉🎉</p>
+            </div> ";
+        ?>
     </main>
     
 </body>

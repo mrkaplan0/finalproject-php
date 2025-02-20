@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: linear-gradient(to top #504B38, #B9B28A, white);
+}
+
 header {
-    background-color: #B9B28A ;
+    background-color: #B9B28A;
     color: white;
     padding: 40px 0;
     text-align: center;
@@ -18,6 +25,8 @@ main {
     justify-content: center;
     align-items: center;
     margin: 20px;
+    flex: 1;
+    background-color: linear-gradient( to top #504B38, #B9B28A, white);
 }
 
 .card-button {
@@ -32,20 +41,53 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .card-button:hover {
     background-color: #B9B28A;
     border: 10px solid #504B38;
     font-weight: bold;
-    transition: border 0.3s;
-    display: flex;
-    text-align: center;
-  
+    transition: all 0.3s ease;
 }
 
- a {
+main a {
     color: white;
     text-decoration: none;
     font-size: 2rem;
+}
+
+.footer {
+    background-color: #504B38;
+    color: white;
+    padding: 1rem 0;
+    margin-top: auto;
+    height: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.footer a:hover {
+    color: #B9B28A;
+    transition: color 0.3s ease;
+    text-decoration: underline;
 }

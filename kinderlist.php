@@ -1,3 +1,21 @@
+<?php
+include 'db.php';
+$kinderliste = [];
+$sql = "SELECT * FROM kind";
+$result = $conn->query($sql);
+if($result) {
+    if($result->num_rows > 0) {
+        $kinderliste = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    } else {
+        echo "No data found.";
+    }
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,30 +36,20 @@
             <th> Geschlecht</th>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Max Mustermann</td>
-                <td>01.01.2010</td>
-                <td>männlich</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Maria Musterfrau</td>
-                <td>01.01.2011</td>
-                <td>weiblich</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Paul Panzer</td>
-                <td>01.01.2012</td>
-                <td>männlich</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Paula Panzer</td>
-                <td>01.01.2013</td>
-                <td>weiblich</td>
-            </tr>
+            <?php foreach($kinderliste as $kind) {
+echo "<tr>";
+echo "<td>" . $kind['id'] . "</td>";
+echo "<td>" . $kind['vorname'] . " " . $kind['nachname'] . "</td>";
+echo "<td>" . $kind['geburtsdatum'] . "</td>";
+echo "<td>" . $kind['geschlecht'] . "</td>";
+echo "<td>" . $kind['adresse'] . "</td>";
+echo "<td><a href='edit-kind.php?id=" . $kind['id'] . "'>Edit</a></td>";
+echo "<td><a href='delete-kind.php?id=" . $kind['id'] . "'>Delete</a></td>";
+echo "</tr>";
+
+
+            } ?>
+        </tbody>
     </table>
 </body>
 </html>
