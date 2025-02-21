@@ -41,6 +41,7 @@ $conn->close();
             <th>Geburtstag</th>
             <th> Geschlecht</th>
             <th>Adresse</th>
+            <th>Profile</th>
             <th>Edit</th>
             <th>Delete</th>
         </thead>
@@ -53,6 +54,7 @@ echo "<td>" . $kind['vorname'] . " " . $kind['nachname'] . "</td>";
 echo "<td>" . $geburtsdatum . "</td>";
 echo "<td>" . $kind['geschlecht'] . "</td>";
 echo "<td>" . $kind['adresse'] . "</td>";
+echo "<td><a href='kind-profile.php?id=" . $kind['id'] . "'>Profile</a></td>";
 echo "<td><a href='edit-kind.php?id=" . $kind['id'] . "'>Edit</a></td>";
 echo "<td><a href='delete-kind.php?id=" . $kind['id'] . "'>Delete</a></td>";
 echo "</tr>";
