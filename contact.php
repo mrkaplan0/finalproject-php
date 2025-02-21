@@ -20,8 +20,9 @@
         <div class="content">
             <div class="navbar">
                 <a href="index.php">Home</a>
-                <a href="about.php">About</a>
-                <a href="contact.php" class="active">Contact</a>
+                <a href="about.php">Über Uns</a>
+                <a href="contact.php" class="active">Kontakt</a>
+                <a href="calender.php">Kalender</a>
                 <a href="login.php">Login</a>
             </div>
             <div class="main">

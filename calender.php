@@ -28,49 +28,35 @@ if ($notesresult) {
     echo "Error: " . $notesql . "<br>" . $conn->error;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $noteDate = $_POST['note-date'];
-    $noteText = $_POST['note-text'];
-    $groupID = $_POST['group'];
-
-    // Save the new note
-    if (isset($_POST['note-date']) && isset($_POST['note-text'])) {
-
-        $notesql = "INSERT INTO notes (note_date, note_text, groupID) VALUES ('$noteDate', '$noteText', '$groupID')";
-        $result = $conn->query($notesql);
-        if ($result) {
-        } else {
-            echo "Error: " . $notesql . "<br>" . $conn->error;
-        }
-    }
-
-    // Redirect to avoid form resubmission
-    $month = intval($_POST['month']);  // Convert to integer
-    $year = intval($_POST['year']);    // Convert to integer
-    header("Location: kalender.php?month=$month&year=$year");
-    exit();
-}
 ?>
+
 <!DOCTYPE html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalender</title>
-    <link rel="stylesheet" href="style/kalender.css">
-</head>
-
-<body>
-    <header>
-        <h1>Kalender</h1>
-        <nav>
-                <a href="index.php">Home</a>
-                <a href="management.php">Management</a>
-                <a href="logout.php">Logout</a>
-            </nav>
-    </header>
-
+    <link rel="stylesheet" href="style/index.css" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="assets/logo.png" alt="" />
+        <h2>Kindergarten</h2>
+        <h1>Phönix</h1>
+        <p>"Mit Liebe..."</p>
+      </div>
+      <div class="content">
+        <div class="navbar">
+          <a href="index.php" >Home</a>
+          <a href="about.php">Über Uns</a>
+          <a href="contact.php">Kontakt</a>
+          <a href="calender.php" class="active">Kalender</a>
+          <a href="login.php">Login</a>
+        </div>
+        <div class="main">
+         
     <div class="groups">
         <ul>
             <?php foreach ($groups as $group): ?>
@@ -93,15 +79,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php endforeach; ?>
         </ul>
     </div>
-    <div class="container">
+    <div class="container-table">
 
         <div class="nav-buttons">
             <?php
 
             // Get the current month and year
             if (isset($_GET['month']) && isset($_GET['year'])) {
-                $month = intval($_GET['month']);
-                $year = intval($_GET['year']);
+                $month = $_GET['month'];
+                $year = $_GET['year'];
             } else {
                 $dateComponents = getdate();
                 $month = $dateComponents['mon'];
@@ -207,9 +193,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
 
                 if ($currentDate == $dateToday) {
-                    $calendar .= "<td class='today'>$currentDay<br><button onclick=\"showNoteForm('$currentDate')\">Notiz hinzufügen</button><div class='note'>$noteText</div></td>";
+                    $calendar .= "<td class='today'>$currentDay<br><div class='note'>$noteText</div></td>";
                 } else {
-                    $calendar .= "<td >$currentDay<br><button onclick=\"showNoteForm('$currentDate')\">Notiz hinzufügen</button><div class='note'>$noteText</div>$round</td>";
+                    $calendar .= "<td >$currentDay<br><div class='note'>$noteText</div>$round</td>";
                 }
 
                 // Increment counters
@@ -231,25 +217,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         echo draw_calendar($month, $year, $notes);
         ?>
-        <form id="note-form" class="note-form" method="post">
-            <input type="hidden" id="note-date" name="note-date">
-            <input type="hidden" name="month" value="<?php echo $month; ?>">
-            <input type="hidden" name="year" value="<?php echo $year; ?>">
-            <textarea id="note-text" name="note-text" rows="4" cols="50" placeholder="Notiz hinzufügen..."></textarea>
-            <select id="group" name="group">
-                <?php foreach ($groups as $group): ?>
-                    <option value="<?php echo $group['id']; ?>"><?php echo $group['groupName']; ?></option>
-                <?php endforeach; ?>
-            </select>
-            <input type="submit" value="Speichern">
-        </form>
+        
     </div>
-    <script>
-        function showNoteForm(date) {
-            document.getElementById('note-date').value = date;
-            document.getElementById('note-form').style.display = 'flex';
-        }
-    </script>
-</body>
-
+    
+         
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <p>Copyright © Ömer Kaplan 2025</p>
+    </div>
+  </body>
 </html>

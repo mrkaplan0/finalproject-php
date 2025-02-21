@@ -18,8 +18,9 @@
         <div class="content">
           <div class="navbar">
                 <a href="index.php">Home</a>
-                <a href="about.php" class="active">About</a>
-                <a href="contact.php">Contact</a>
+                <a href="about.php" class="active">Über Uns</a>
+                <a href="contact.php">Kontakt</a>
+                <a href="calender.php">Kalender</a>
                 <a href="login.php">Login</a>
           </div>
             <div class="main">
@@ -34,7 +35,7 @@
         
     </div>
     <div class="footer">
-            <h2>Footer</h2>
-        </div>
+      <p>Copyright © Ömer Kaplan 2025</p>
+    </div>
 </body>
 </html>

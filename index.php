@@ -19,6 +19,7 @@
           <a href="index.php" class="active">Home</a>
           <a href="about.php">Über Uns</a>
           <a href="contact.php">Kontakt</a>
+          <a href="calender.php">Kalender</a>
           <a href="login.php">Login</a>
         </div>
         <div class="main">

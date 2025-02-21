@@ -27,6 +27,12 @@ $conn->close();
 <body>
     <header>
         <h1>Kinder List</h1>
+        <nav>
+           
+                <a href="index.php">Home</a>
+                <a href="management.php">Management</a>
+                <a href="logout.php">Logout</a>
+        </nav>
     </header>
     <table border="1"> 
         <thead>
