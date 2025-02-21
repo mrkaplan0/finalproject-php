@@ -1,3 +1,8 @@
+body {
+  background: url("https://images.unsplash.com/photo-1476950648868-16c7dca9499c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+background-position: center;
+}
+
 main {
   justify-content: center;
   display:flex;
@@ -6,7 +11,7 @@ main {
   text-align: center;
   
 }
-.login{
+.login{ background-color: rgba(255, 255, 255, 0.84);
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -33,9 +38,8 @@ main {
 /*form style */
 .login-form {
   width: 90%;
-
- 
 }
+
 .login-form input {
   width: 90%;
   padding: 10px;
@@ -44,31 +48,33 @@ main {
   border: none;
   border-bottom: 1px solid #ccc;
 }
-.login-form i {color: #f4f4f4f4;
+.login-form i {color: #444444;
     font-size: 20px;
     margin-right: 10px;
 }
-.login-form button {
+.submit-button {
   width: 80%;
   padding: 10px;
-  margin: 30px 0;
+  margin: 30px auto;
   border: none;
   background-color: #f4f4f4f4;
   color: #333;
   font-weight: bold;
   cursor: pointer;
 }
-.login-form button:hover {
+.submit-button:hover {
   background-color: rgba(95, 25, 234, 0.957);
   color: #f4f4f4f4;
 }
 
-.login-form a {
+/*link style */
+
+.link1 {
+  margin-top: 20px;
+  color: whitesmoke;
   text-decoration: none;
-  color: #33333383;
-  
+  font-weight: bold;
 }
-.login-form a:hover {
+.link1:hover {
   color: rgba(95, 25, 234, 0.957);
 }
-

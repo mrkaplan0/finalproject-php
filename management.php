@@ -21,8 +21,14 @@ if (isset($_SESSION['email'])) {
 <body>
     <header>
         <?php
-        echo "<h1>Hallo " . htmlspecialchars($username) . "🎉😊</h1>";
+        echo "<h1>Hallo " . htmlspecialchars($username) . "🎉</h1>";
         ?>
+        <nav>
+           
+                <a href="index.php">Home</a>
+                <a href="management.php">Management</a>
+                <a href="logout.php">Logout</a>
+            
     </header>
     <main>
         <a href="add-kind.php">
@@ -32,22 +38,15 @@ if (isset($_SESSION['email'])) {
         <a href="kinderlist.php">
             <div class="card-button">Kinderlist</div>
         </a>
-        <a href="add-student.html">
-            <div class="card-button">Erzieher:in hinzufügen</div>
-        </a>
 
-      
+        <a href="kalender.php">
+            <div class="card-button">Kalender</div>
+
+
+
     </main>
 
-    <footer class="footer" style="  background-color: #504B38;
-    color: white;
-    padding: 1rem 0;
-    margin-top: auto;
-    height: auto;">
-        <div class="footer-content">
-            <a href="logout.php">Logout</a>
-            <p>© 2025 Kindergarten Kaplan</p>
-        </div>
-    </footer>
+
 </body>
+
 </html>

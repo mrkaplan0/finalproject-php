@@ -1,0 +1,117 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    
+}
+
+header {
+    background-color: #B9B28A ;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #555;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    background-color: #f4f4f4;
+}
+td {
+    height: 100px;
+    vertical-align: top; 
+    align-items: center;
+    justify-content: center;
+}
+.today {
+    background-color: #B9B28A;
+    color: white;
+}
+.nav-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.nav-buttons a {
+    margin: 0 10px;
+    padding: 10px 15px;
+    background-color: #504B38;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.nav-buttons a:hover {
+    background-color: #B9B28A;
+}
+.note-form {
+    margin-top: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.note-form input, select {
+    margin: 10px;
+    padding: 10px;
+   
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.note {
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #555; 
+}
+
+.round {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #504B38;
+    color: white;
+  
+    margin: 10px auto;
+   
+}
+.groups {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.groups ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; 
+}
+
+.groups li {
+    border-radius: 4px;
+    cursor: pointer;
+}

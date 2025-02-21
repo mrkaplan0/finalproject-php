@@ -1,5 +1,6 @@
 <?php
 include 'db.php';
+$error = "";
 if (isset($_POST['submit'])) {
     $username = "";
     $email = $_POST['email'];
@@ -8,19 +9,18 @@ if (isset($_POST['submit'])) {
     $userQuery = "SELECT * FROM user WHERE email = '$email'";
     $result = mysqli_query($conn, $userQuery);
     $row = mysqli_num_rows($result);
-    echo $row;
     if ($row > 0) {
         $user = mysqli_fetch_assoc($result);
         if (password_verify($password, $user['password'])) {
             session_start();
-            $_SESSION['email'] = $user ['email'];
-            $_SESSION['username'] = $user ['username'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['username'] = $user['username'];
             header("Location: management.php");
         } else {
-            echo "Password is incorrect.";
+            $error = "Passwort ist falsch.";
         }
     } else {
-        echo "User not found.";
+        $error =  "User nicht gefunden.";
     }
 }
 mysqli_close($conn);
@@ -56,12 +56,17 @@ mysqli_close($conn);
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" name="password" placeholder="Password" required>
                     </div>
-                    <input type="submit" name="submit" value="Login"></input>
+                    <input class="submit-button" type="submit" name="submit" value="Login"></input>
                 </form>
+                <?php if ($error != "") {
 
+                    echo "<p style ='color:red'> $error </p>";
+                } ?>
             </div>
-            <a href="register.php"> Haben Sie noch kein Konto?</a>
+
         </div>
+
+        <a class="link1" href="register.php"> Haben Sie noch kein Konto?</a>
     </main>
 
 </body>

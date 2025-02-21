@@ -13,10 +13,16 @@ header {
 }
 
 table {
+    margin: auto;
     border: 1px solid #ccc;
     width: 40%;
     border-collapse: collapse;
     margin-top: 20px;
+}
+table th {
+    background-color: #504B38;
+    color: white;
+    padding: 20px;
 }
 
 table tr td {
@@ -25,4 +31,9 @@ table tr td {
     padding: 20px;
     border-collapse: collapse;
     margin: 20px;
+}
+
+table a{
+    text-decoration: none;
+    color: #B9B28A;
 }

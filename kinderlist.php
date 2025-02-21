@@ -28,19 +28,23 @@ $conn->close();
     <header>
         <h1>Kinder List</h1>
     </header>
-    <table> 
+    <table border="1"> 
         <thead>
             <th>Id</th>
             <th>Name</th>
             <th>Geburtstag</th>
             <th> Geschlecht</th>
+            <th>Adresse</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </thead>
         <tbody>
             <?php foreach($kinderliste as $kind) {
+                $geburtsdatum = date('d.m.Y', strtotime($kind['geburtsdatum']));
 echo "<tr>";
 echo "<td>" . $kind['id'] . "</td>";
 echo "<td>" . $kind['vorname'] . " " . $kind['nachname'] . "</td>";
-echo "<td>" . $kind['geburtsdatum'] . "</td>";
+echo "<td>" . $geburtsdatum . "</td>";
 echo "<td>" . $kind['geschlecht'] . "</td>";
 echo "<td>" . $kind['adresse'] . "</td>";
 echo "<td><a href='edit-kind.php?id=" . $kind['id'] . "'>Edit</a></td>";

@@ -58,10 +58,10 @@ if(isset($_POST['submit'])){
           
         </div> 
 
-        <?php if($isSuccess){} 
+        <?php if($isSuccess){
           echo  "<div class='success'>";      
                  echo   "<p>🎉🎉🎉  Kind wurde erfolgreich hinzugefügt.  🎉🎉🎉</p>
-            </div> ";
+            </div> ";} 
         ?>
     </main>
     

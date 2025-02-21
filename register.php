@@ -55,7 +55,7 @@ mysqli_close($conn);
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" name="password" placeholder="Password" required>
                     </div>
-                    <input type="submit" name="submit" value="Register"></input>
+                    <input class="submit-button" type="submit" name="submit" value="Register"></input>
                 </form>
                 
             </div>
