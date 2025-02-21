@@ -226,6 +226,7 @@ if ($notesresult) {
     </div>
     <div class="footer">
       <p>Copyright © Ömer Kaplan 2025</p>
+      <p style="font-size: 12px;">Bild❤️Cao lãnh</p>
     </div>
   </body>
 </html>

@@ -70,7 +70,7 @@ font-style: italic;
     text-shadow: 2px 2px 4px #000000;
 }
 .navbar a:hover{
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(65, 65, 65, 0.8);
     color: white;
     transform: scale(1.1);
     transition: all 0.3s ease;
@@ -78,6 +78,7 @@ font-style: italic;
 .navbar a.active{
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
+    z-index: 1000;
     transform: scale(1.1);
     transition: all 0.3s ease;
 }
@@ -161,11 +162,10 @@ td:hover {
 .note {
     margin-top: 5px;
     font-size: 1rem;
-    color: black; 
+    color: #504B38; 
     font-weight: bold;
 }
 .note:hover {
-    background-color: #B9B28A;
     color: black;
 }
 
@@ -182,7 +182,7 @@ td:hover {
 .groups {
     display: flex;
     justify-content: center;
-    
+    margin-bottom: 10px;
 }
 
 .groups ul {
@@ -200,4 +200,7 @@ td:hover {
 }
  .groups li:hover {
     background-color: #B9B28A;
-    color: white;}
+    color: white;
+transform: scale(1.1);
+    transition: all 0.3s ease;
+}
