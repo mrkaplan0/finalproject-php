@@ -36,7 +36,7 @@ if ($notesresult) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalender</title>
-    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="../style/index.css">
     
   </head>
   <body>
@@ -49,7 +49,7 @@ if ($notesresult) {
       </div>
       <div class="content">
         <div class="navbar">
-          <a href="index.php" >Home</a>
+          <a href="../index.php" >Home</a>
           <a href="about.php">Über Uns</a>
           <a href="contact.php">Kontakt</a>
           <a href="calender.php" class="active">Kalender</a>

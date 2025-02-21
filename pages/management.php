@@ -15,7 +15,7 @@ if (isset($_SESSION['email'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management</title>
-    <link rel="stylesheet" href="style/management.css">
+    <link rel="stylesheet" href="../style/management.css">
 </head>
 
 <body>
@@ -25,8 +25,7 @@ if (isset($_SESSION['email'])) {
         ?>
         <nav>
            
-                <a href="index.php">Home</a>
-                <a href="management.php">Management</a>
+                <a href="../index.php">Home</a>
                 <a href="logout.php">Logout</a>
             
     </header>
@@ -39,7 +38,7 @@ if (isset($_SESSION['email'])) {
             <div class="card-button">Kinderlist</div>
         </a>
 
-        <a href="kalender.php">
+        <a href="kalender-edit.php">
             <div class="card-button">Kalender</div>
 
 

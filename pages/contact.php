@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakt</title>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="../style/index.css">
 </head>
 
 <body>
 
     <div class="container">
         <div class="header">
-            <img src="assets/logo.png" alt="">
+            <img src="../assets/logo.png" alt="">
             <h2>Kindergarten</h2>
             <h1>Phönix</h1>
             <p>"Mit Liebe..."</p>
         </div>
         <div class="content">
             <div class="navbar">
-                <a href="index.php">Home</a>
-                <a href="about.php">Über Uns</a>
+                <a href="../index.php">Home</a>
+                <a href="pages/about.php">Über Uns</a>
                 <a href="contact.php" class="active">Kontakt</a>
                 <a href="calender.php">Kalender</a>
                 <a href="login.php">Login</a>

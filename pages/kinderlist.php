@@ -22,14 +22,13 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinder List</title>
-    <link rel="stylesheet" href="style/kinderlist.css">
+    <link rel="stylesheet" href="../style/kinderlist.css">
 </head>
 <body>
     <header>
         <h1>Kinder List</h1>
         <nav>
-           
-                <a href="index.php">Home</a>
+                <a href="../index.php">Home</a>
                 <a href="management.php">Management</a>
                 <a href="logout.php">Logout</a>
         </nav>
