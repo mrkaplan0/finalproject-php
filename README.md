@@ -1,5 +1,7 @@
 I just learned PHP and this was my final project in our education.
 
+I created a website that kindergartens can use to manage their children and their activities and interact with parents.
+
 ![Screenshot 2025-03-11 153802](https://github.com/user-attachments/assets/9dada7db-471b-4d65-9105-4c8acbc549a5)
 
 
